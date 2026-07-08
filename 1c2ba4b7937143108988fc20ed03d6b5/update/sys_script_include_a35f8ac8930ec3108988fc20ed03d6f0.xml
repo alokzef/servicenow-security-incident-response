@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1913695_securi_0.SecurityRiskCalculator</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>SecurityRiskCalculator</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var SecurityRiskCalculator = Class.create();
+SecurityRiskCalculator.prototype = {
+    initialize: function() {},
+
+    calculateScore: function(ciSysId, rawThreatScore) {
+        // Convert the raw score input into an integer, fallback to 5 if empty
+        var finalRiskScore = parseInt(rawThreatScore) || 5; 
+        
+        // If no Configuration Item was attached, return the raw score as-is
+        if (!ciSysId) return finalRiskScore;
+
+        var ciGr = new GlideRecord('cmdb_ci');
+        if (ciGr.get(ciSysId)) {
+            // Retrieve the business criticality value of the asset
+            var criticality = ciGr.getValue('business_criticality'); 
+            
+            // Criticality multipliers: 1 = High/Most Critical, 2 = Medium, 3 = Low
+            if (criticality == '1') {
+                finalRiskScore += 40; // High criticality asset bump
+            } else if (criticality == '2') {
+                finalRiskScore += 20; // Medium criticality asset bump
+            } else {
+                finalRiskScore += 5;  // Low criticality asset bump
+            }
+        }
+        return finalRiskScore;
+    },
+
+    type: 'SecurityRiskCalculator'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-08 09:50:06</sys_created_on>
+        <sys_id>a35f8ac8930ec3108988fc20ed03d6f0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SecurityRiskCalculator</sys_name>
+        <sys_package display_value="Security Incident Response" source="x_1913695_securi_0">1c2ba4b7937143108988fc20ed03d6b5</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Security Incident Response">1c2ba4b7937143108988fc20ed03d6b5</sys_scope>
+        <sys_update_name>sys_script_include_a35f8ac8930ec3108988fc20ed03d6f0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-08 09:50:06</sys_updated_on>
+    </sys_script_include>
+</record_update>
