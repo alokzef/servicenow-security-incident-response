@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="ba2eec3f937143108988fc20ed03d654" extends="task" label="Security Incident Ticket" max_length="40" name="x_1913695_securi_0_security_incident_ticket" type="collection">
+        <element label="Calculated Risk Score" max_length="40" name="calculated_risk_score" type="integer"/>
+        <element label="Raw Risk Score" max_length="40" name="u_raw_risk_score" type="integer"/>
+    </element>
+</database>

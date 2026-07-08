@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_1913695_securi_0.user" name="x_1913695_securi_0.user">392b28b7937143108988fc20ed03d62f</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-07 07:47:56</sys_created_on>
+        <sys_id>fd2b28b7937143108988fc20ed03d631</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>392b28b7937143108988fc20ed03d62f</sys_name>
+        <sys_package display_value="Security Incident Response" source="x_1913695_securi_0">1c2ba4b7937143108988fc20ed03d6b5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Security Incident Response">1c2ba4b7937143108988fc20ed03d6b5</sys_scope>
+        <sys_update_name>sys_embedded_help_role_fd2b28b7937143108988fc20ed03d631</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-07 07:47:56</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>
